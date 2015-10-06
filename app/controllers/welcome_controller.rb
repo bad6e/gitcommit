@@ -1,9 +1,15 @@
 class WelcomeController < ApplicationController
 
   def index
-    url = "https://github.com/bad6e"
-    data = Nokogiri::HTML(open(url))
-    @name  = data.at_css(".vcard-fullname").text.strip
-    @count = data.at_css(".contrib-number").text.strip
+    urls = ["https://github.com/bad6e",
+            "https://github.com/roseak",
+            "https://github.com/mcschatz",
+            "https://github.com/travishaby"]
+
+    @text = urls.map do |url|
+      Nokogiri::HTML(open(url))
+    end
+
+
   end
 end
