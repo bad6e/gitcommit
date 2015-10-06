@@ -13,7 +13,14 @@ class WelcomeController < ApplicationController
             "https://github.com/jbrr",
             "https://github.com/rasensio1",
             "https://github.com/selfup",
-            "https://github.com/dastinnette"
+            "https://github.com/dastinnette",
+            "https://github.com/mbburch",
+            "https://github.com/Kealii",
+            "https://github.com/Unsafepond",
+            "https://github.com/ChrisCenatie",
+            "https://github.com/adamki",
+            "https://github.com/plato721",
+            "https://github.com/Egogre"
           ]
 
     text = urls.map do |url|
