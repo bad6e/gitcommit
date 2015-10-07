@@ -24,8 +24,8 @@ class Welcome
   end
 
   def sort
-    join = get_names.zip(get_count)
-    group = join.sort{|a,b| b[1] <=> a[1]}
+    join_arrays = get_names.zip(get_count)
+    join_arrays.sort{|a,b| b[1] <=> a[1]}
   end
 
   def get_names
