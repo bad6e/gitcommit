@@ -4,6 +4,8 @@ task :update_commits => :environment do
   require 'nokogiri'
   require 'open-uri'
 
+  Stat.delete_all
+
   @urls = GlobalConstants::URLS
 
   @names = @urls.map do |url|
