@@ -3,7 +3,7 @@ task :update_commits => :environment do
   puts "To Infinity and Beyond!"
   require 'nokogiri'
   require 'open-uri'
-  require 'pry'
+
 
   Stat.delete_all
   puts "Deleted old commits"
