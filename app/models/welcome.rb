@@ -1,5 +1,4 @@
 class Welcome
-
   def initialize
     @urls =["https://github.com/bad6e",
             "https://github.com/roseak",
