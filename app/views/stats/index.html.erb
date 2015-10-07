@@ -73,17 +73,16 @@
           <h3 id="leaderboard">Leaderboard</h3>
             <table class="table">
               <tr>
-                <td>Place</td>
                 <td>Name</td>
+                <td>Commits</td>
               </tr>
-              <tr>
-                <% n = 0 %>
-                <% @group.each do |css| %>
-                <td><%= n = n + 1 %></td>
-                <td><%= css.join("- ") %> commits</td>
-              </tr>
+              <% @stats.each do |stat| %>
+                <tr>
+                  <td><%= stat.name %></td>
+                  <td><%= stat.commits %></td>
+                </tr>
               <% end %>
-                <table>
+            <table>
         </div>
       </div>
     </div>
