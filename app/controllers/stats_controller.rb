@@ -1,7 +1,8 @@
 class StatsController < ApplicationController
 
   def index
-    @stats = Stat.order(commits: :desc)
+    @stats      = Stat.order(commits: :desc)
+    @updated_at = Stat.first
   end
 
   private

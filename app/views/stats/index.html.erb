@@ -62,6 +62,7 @@
         <div class="col-lg-12 text-center">
           <h1>1507 Git Commit Race</h1>
             <p class="lead">Compete with the best - who will have the most commits when Turing is over?</p>
+            <p> Results as of: <%= @updated_at.created_at %>
           </div>
         </div>
       </div>
@@ -74,7 +75,7 @@
             <table class="table">
               <tr>
                 <td>Name</td>
-                <td>Commits</td>
+                <td>Commits(YTD)</td>
               </tr>
               <% @stats.each do |stat| %>
                 <tr>
