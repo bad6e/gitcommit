@@ -5,17 +5,20 @@ task :update_commits => :environment do
   require 'open-uri'
 
   Stat.delete_all
+  puts "Deleted old commits"
+
 
   @urls = GlobalConstants::URLS
 
   @names = @urls.map do |url|
     Nokogiri::HTML(open(url)).at_css(".vcard-fullname").text.strip
   end
+  puts "Mapped Names"
 
   @commits = @urls.map do |url|
     Nokogiri::HTML(open(url)).at_css(".contrib-number").text.gsub("total","")
   end
-
+  puts "Mapped Commits"
   join = @names.zip(@commits)
 
   join.each do |stat|
