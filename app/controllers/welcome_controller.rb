@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 
   def index
-    @group = Welcome.new.sort
+    @group ||= Welcome.new.sort
   end
 end
