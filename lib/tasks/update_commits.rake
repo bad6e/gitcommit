@@ -16,7 +16,7 @@ task :update_commits => :environment do
   puts "Mapped Names"
 
   @commits = @urls.map do |url|
-    Nokogiri::HTML(open(url)).at_css(".contrib-number").text.gsub("total","")
+    Nokogiri::HTML(open(url)).at_css(".contrib-number").text.gsub("total","").rstrip.gsub(",","").to_i
   end
   puts "Mapped Commits"
 
@@ -32,7 +32,7 @@ task :update_commits => :environment do
   end
   puts "Mapped Current Streaks"
 
-  #Parse data into appropiate format
+  #Parse data into appropiate formats
   join_1 = @names.zip(@commits)
   join_2 = join_1.zip(@streaks)
 
