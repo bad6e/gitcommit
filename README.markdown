@@ -11,5 +11,5 @@ Rake update_commits is where all the scraping takes place and saves the informat
 
 The website can be found here: [GitCommit1507](http://gitcommit1507.herokuapp.com/). It is setup up using Heroku Scheduler which scrapes the information every hour.
 
-
+If you wish to add a Github profile to scrape update the global_constants.rb file.
 
