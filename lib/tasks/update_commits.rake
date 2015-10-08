@@ -28,6 +28,12 @@ task :update_commits => :environment do
   end
   puts "Mapped Streaks"
 
+  #Current Streak
+  @current_streaks = @urls.map do |url|
+    Nokogiri::HTML(open(url)).css(".contrib-column").css(".table-column").css(".contrib-number")[2].text.strip.gsub("days","").rstrip
+  end
+  puts "Mapped Current Streaks"
+
   join = @names.zip(@commits)
   final = join.zip(@streaks)
 
@@ -35,20 +41,19 @@ task :update_commits => :environment do
     stat.flatten
   end
 
-  final.each do |stat|
+  real_final = final.zip(@current_streaks)
+
+
+  real_final = real_final.map do |stat|
     stat.flatten
-    Stat.create(name: stat[0], commits: stat[1], streaks: stat[2])
-    puts "creating #{stat[0]} with #{stat[1]}commits and a streak of #{stat[2]} days"
   end
 
-
-
-
-
-
-
-
-
+  real_final.each do |stat|
+    stat.flatten
+    Stat.create(name: stat[0], commits: stat[1], streaks: stat[2], current_streaks: stat[3])
+    puts "creating #{stat[0]} with #{stat[1]}commits and a l
+          ongest streak of #{stat[2]} days and a current streak of #{stat[3]} days"
+  end
 
   puts "All done Mr. Doucette"
 end
