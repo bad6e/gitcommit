@@ -4,10 +4,8 @@ task :update_commits => :environment do
   require 'nokogiri'
   require 'open-uri'
 
-
   Stat.delete_all
   puts "Deleted old commits"
-
 
   @urls = GlobalConstants::URLS
 
@@ -34,25 +32,25 @@ task :update_commits => :environment do
   end
   puts "Mapped Current Streaks"
 
-  join = @names.zip(@commits)
-  final = join.zip(@streaks)
+  #Parse data into appropiate format
+  join_1 = @names.zip(@commits)
+  join_2 = join_1.zip(@streaks)
+
+  join_2 = join_2.map do |stat|
+    stat.flatten
+  end
+
+  final = join_2.zip(@current_streaks)
 
   final = final.map do |stat|
     stat.flatten
   end
 
-  real_final = final.zip(@current_streaks)
-
-
-  real_final = real_final.map do |stat|
-    stat.flatten
-  end
-
-  real_final.each do |stat|
+  #Save information to the database
+  final.each do |stat|
     stat.flatten
     Stat.create(name: stat[0], commits: stat[1], streaks: stat[2], current_streaks: stat[3])
-    puts "creating #{stat[0]} with #{stat[1]}commits and a l
-          ongest streak of #{stat[2]} days and a current streak of #{stat[3]} days"
+    puts "creating #{stat[0]} with #{stat[1]}commits and a longest streak of #{stat[2]} days and a current streak of #{stat[3]} days"
   end
 
   puts "All done Mr. Doucette"
