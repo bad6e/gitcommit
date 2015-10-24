@@ -4,9 +4,9 @@ class StatsController < ApplicationController
     # git = GithubService.new
 
     # @message = git.find_users_commits
-    @stats           = Stat.order(commits: :desc)
-    @streaks         = Stat.order(streaks: :desc)
-    @current_streaks = Stat.order(current_streaks: :desc)
+    @stats            = Stat.order(commits: :desc)
+    @streaks          = Stat.order(streaks: :desc)
+    @current_streaks  = Stat.order(current_streaks: :desc)
     @updated_at       = Stat.first.when_created
   end
 
