@@ -14,6 +14,8 @@ gem "bootswatch-rails"
 gem "nokogiri"
 gem "whenever", require: false
 gem "hurley", require: false
+gem "omniauth-github"
+gem "figaro"
 
 group :development, :test do
   gem "byebug"

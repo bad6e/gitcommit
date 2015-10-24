@@ -1,0 +1,66 @@
+<!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>1507 Git Commit Race</h1>
+            <p class="lead">Compete with the best - who will have the most commits when Turing is over?</p>
+            <p> Results as of: <%= @updated_at %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="container">
+      <div class="col-md-8">
+        <h3 id="leaderboard">Commits Leaderboard</h3>
+          <table class="table">
+            <tr>
+              <td>Name</td>
+              <td>Commits Since <%= Time.now.month %>/<%= Time.now.day %>/<%= Time.now.year - 1 %></td>
+            </tr>
+            <% @stats.each do |stat| %>
+              <tr>
+                <td><%= stat.name %></td>
+                <td><%= stat.commits %></td>
+              </tr>
+            <% end %>
+          <table>
+      </div>
+       <div class="col-md-8">
+        <h3 id="leaderboard">Longest Current Streak Leaderboard</h3>
+          <table class="table">
+            <tr>
+              <td>Name</td>
+              <td>Longest Current Streak</td>
+            </tr>
+            <% @current_streaks.each do |stat| %>
+              <tr>
+                <td><%= stat.name %></td>
+                <td><%= stat.current_streaks %> days</td>
+              </tr>
+            <% end %>
+          <table>
+      </div>
+      <div class="col-md-8">
+        <h3 id="leaderboard">Longest Streak Leaderboard</h3>
+          <table class="table">
+            <tr>
+              <td>Name</td>
+              <td>Longest Streak</td>
+            </tr>
+            <% @streaks.each do |stat| %>
+              <tr>
+                <td><%= stat.name %></td>
+                <td><%= stat.streaks %> days</td>
+              </tr>
+            <% end %>
+          <table>
+      </div>
+    </div>
+
+</body>
+
+</html> -->
+
+
