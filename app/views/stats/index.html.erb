@@ -14,7 +14,7 @@
     <br><br>
   </div>
 
-  <div class="container commits hidden" id="commits">
+  <div class="container commits" id="commits" style="display: none">
 
     <div class="col-md-4" align="center">
       <h3 class="home">Leaderboard</h3>
@@ -67,13 +67,12 @@
 
 
 <script type="text/javascript">
-  $( ".button" ).click(function() {
-    $('div.commits').removeClass("hidden");
-  });
+ $(".button").click(function(){
+    var $target = $('.commits'),
+        $toggle = $(this);
 
+    $target.slideToggle( 500, function () {
+        $toggle.text(($target.is(':visible') ? 'Hide' : 'See') + ' Statistics');
+    });
+});
 </script>
-
-
-
-
-
