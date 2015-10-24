@@ -1,13 +1,79 @@
-<%= render partial: "layouts/navbar" %>
-
 <div class="container-fluid container-home">
-  <div class="col-md-2"></div>
-    <div class="col-md-8">
-      <h1 class="home">Welcome to Git Commit</h1>
-      <h2 class="home">A Personalized Github Tracker.</h2>
-      <%= link_to "Login with Github", login_path, class: "btn btn-lg btn-default btn-home" %>
+  <div class="col-md-12">
+   <h1 class="home">Welcome to the Git Commit Tracker</h1>
+    <h2 class="home">A Personalized Github Tracker.</h2>
+    <%= link_to "Login with Github", login_path, class: "btn btn-lg btn-default btn-home" %>
+  </div>
+  <br><br>
+
+  <div class="col-md-12">
+    <br>
+    <h3 class="home">1507 Git Statistics</h3>
+    <br>
+    <button class="btn btn-lg btn-default btn-home button">See Statistics</button>
+    <br><br>
+  </div>
+
+  <div class="container commits hidden" id="commits">
+
+    <div class="col-md-4" align="center">
+      <h3 class="home">Leaderboard</h3>
+        <table class="table home">
+          <tr>
+            <td>Name</td>
+            <td>Commits Since <%= Time.now.month %>/<%= Time.now.day %>/<%= Time.now.year - 1 %></td>
+          </tr>
+          <% @stats.each do |stat| %>
+          <tr>
+            <td><%= stat.name %></td>
+            <td><%= stat.commits %></td>
+          </tr>
+        <% end %>
+      </table>
     </div>
-  <div class="col-md-2"></div>
+
+  <div class="col-md-4" align="center" id="completed-orders">
+    <h3 class="home">Current Streak</h3>
+      <table class="table home">
+        <tr>
+          <td>Name</td>
+          <td>Longest Current Streak</td>
+        </tr>
+        <% @current_streaks.each do |streak| %>
+        <tr>
+          <td><%= streak.name %></td>
+          <td><%= streak.current_streaks %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="col-md-4" align="center" id="completed-orders">
+    <h3 class="home">Longest Streak</h3>
+      <table class="table home">
+        <tr>
+          <td>Name</td>
+          <td>Longest Current Streak</td>
+        </tr>
+        <% @streaks.each do |streak| %>
+        <tr>
+          <td><%= streak.name %></td>
+          <td><%= streak.streaks %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
+
+
+<script type="text/javascript">
+  $( ".button" ).click(function() {
+    $('div.commits').removeClass("hidden");
+  });
+
+</script>
+
+
+
 
 

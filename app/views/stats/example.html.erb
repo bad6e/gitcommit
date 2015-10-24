@@ -13,7 +13,7 @@
 
     <div class="container">
       <div class="col-md-8">
-        <h3 id="leaderboard">Commits Leaderboard</h3>
+        <h3 id="leaderboard hide">Commits Leaderboard</h3>
           <table class="table">
             <tr>
               <td>Name</td>
@@ -59,8 +59,15 @@
       </div>
     </div>
 
-</body>
-
-</html> -->
+<script type="text/javascript">
+  $(document).ready(function(){
+      $("#hide").click(function(){
+          $("table").hide();
+      });
+      $("#show").click(function(){
+          $("p").show();
+      });
+  });
+</script>
 
 

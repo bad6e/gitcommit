@@ -18,8 +18,7 @@ module GlobalConstants
             "https://github.com/ChrisCenatie",
             "https://github.com/adamki",
             "https://github.com/plato721",
-            "https://github.com/Egogre",
-            "https://github.com/mikedao"]
+            "https://github.com/Egogre"]
 
   USERS = %w(
               bad6e
