@@ -1,5 +1,5 @@
 module GlobalConstants
-URLS = ["https://github.com/bad6e",
+  URLS = ["https://github.com/bad6e",
             "https://github.com/roseak",
             "https://github.com/mcschatz",
             "https://github.com/travishaby",
@@ -20,4 +20,28 @@ URLS = ["https://github.com/bad6e",
             "https://github.com/plato721",
             "https://github.com/Egogre",
             "https://github.com/mikedao"]
+
+  USERS = %w(
+              bad6e
+              roseak
+              mcschatz
+              travishaby
+              Jpease1020
+              jphoenix86
+              HoffsMH
+              MowAlon
+              russelleh
+              jbrr
+              rasensio1
+              selfup
+              dastinnette
+              mbburch
+              Kealii
+              Unsafepond
+              ChrisCenatie
+              adamki
+              plato721
+              Egogre
+              mikedao
+            )
 end

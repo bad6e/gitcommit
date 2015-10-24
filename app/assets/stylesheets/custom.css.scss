@@ -1,3 +1,42 @@
+body {
+  padding-top: 70px;
+}
+
 #leaderboard {
   text-align: center;
+}
+
+.container-home {
+  background-color: #1B3C59;
+  min-height: 100vh;
+  padding-top: 30vh;
+  text-align: center;
+}
+
+.home {
+  color: white;
+  font-weight: 100;
+  font-size: 100;
+}
+
+h1.home {
+  font-size: 60px;
+  color: #F8BB44;
+}
+
+a.btn.btn-lg.btn-default.btn-home {
+  background-color: transparent;
+  border-width: 2px;
+  color: #60BFBF;
+  font-weight: 100;
+  border-color: #60BFBF;
+  margin-top: 20px;
+}
+
+a.btn.btn-lg.btn-default.btn-home:hover {
+  opacity: 0.4;
+}
+
+img.img-circle.img-thumbnail.home-image {
+  height: 200px;
 }
