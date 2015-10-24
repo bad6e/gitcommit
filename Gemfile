@@ -13,6 +13,7 @@ gem "bootstrap-sass", "~> 3.3.5"
 gem "bootswatch-rails"
 gem "nokogiri"
 gem "whenever", require: false
+gem "hurley", require: false
 
 group :development, :test do
   gem "byebug"
@@ -20,7 +21,7 @@ group :development, :test do
   gem "database_cleaner"
   gem "capybara"
   gem "launchy"
-  gem "pry", :require => "pry"
+  gem "pry"
   gem "shoulda-matchers"
 end
 
