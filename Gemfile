@@ -13,7 +13,7 @@ gem "bootstrap-sass", "~> 3.3.5"
 gem "bootswatch-rails"
 gem "nokogiri"
 gem "whenever", require: false
-gem "hurley", require: false
+gem "hurley"
 gem "omniauth-github"
 gem "figaro"
 
