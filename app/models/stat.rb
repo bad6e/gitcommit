@@ -7,7 +7,7 @@ class Stat < ActiveRecord::Base
   end
 
   def commit_order
-    Statg.order(commits: :desc)
+    Stat.order(commits: :desc)
   end
 
   def streak
