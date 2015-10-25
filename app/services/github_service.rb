@@ -9,6 +9,14 @@ class GithubService
     parse(connection.get("users/#{user}/repos"))
   end
 
+  def find_followers(user)
+    parse(connection.get("users/#{user}/followers"))
+  end
+
+  def find_user_follows(user)
+    parse(connection.get("users/#{user}/following"))
+  end
+
   def parse(response)
     JSON.parse(response.body, symbolize_names: true)
   end

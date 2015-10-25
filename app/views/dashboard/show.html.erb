@@ -8,7 +8,7 @@
   </div>
 
 
-  <div class="col-md-2 col-md-offset-4">
+  <div class="col-md-4">
     <h2 class="home">Your Repos</h2>
     <ul>
     <% @repos.each do |repo| %>
@@ -16,10 +16,26 @@
     <% end %>
   </div>
 
+  <div class="col-md-4">
+    <h2 class="home">Your Followers</h2>
+    <ul>
+    <% @followers.each do |follower| %>
+    <li class="home"><%= follower %></li>
+    <% end %>
+  </div>
+
+   <div class="col-md-4">
+    <h2 class="home">Who You are Following?</h2>
+    <ul>
+    <% @followees.each do |followee| %>
+    <li class="home"><%= followee %></li>
+    <% end %>
+  </div>
 
 
-
-
-
+<div class="container">
+  <div class="col-md-12">
+    <%= link_to "1507 Statistics", root_path, class: "btn btn-lg btn-default btn-home" %>
+    </div>
 </div>
 

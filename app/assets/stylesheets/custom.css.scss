@@ -1,8 +1,16 @@
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #1B3C59;
+  background-size: cover;
+  position: relative;
+  padding: 0 0 30px;
+}
 
 .container-home {
   background-color: #1B3C59;
-  min-height: 100vh;
-  padding-top: 13vh;
+  min-height: 100%;
+  padding-top: 100px;
   text-align: center;
 }
 
@@ -54,5 +62,6 @@ img.img-circle.img-thumbnail.home-image {
 }
 
 footer {
+  padding-top: 75px;
   color: #F8BB44;
 }
