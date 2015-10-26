@@ -23,7 +23,7 @@
             <td>Name</td>
             <td>Commits Since <%= Time.now.month %>/<%= Time.now.day %>/<%= Time.now.year - 1 %></td>
           </tr>
-          <% @stats.commit_order.each do |stat| %>
+          <% @stats.ordered_commits.each do |stat| %>
           <tr>
             <td><%= stat.name %></td>
             <td><%= stat.commits %></td>
@@ -55,7 +55,7 @@
           <td>Name</td>
           <td>Longest Current Streak</td>
         </tr>
-        <% @stats.streak.each do |streak| %>
+        <% @stats.longest_streak.each do |streak| %>
         <tr>
           <td><%= streak.name %></td>
           <td><%= streak.streaks %></td>

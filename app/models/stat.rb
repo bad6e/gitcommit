@@ -6,19 +6,19 @@ class Stat < ActiveRecord::Base
     created_at.strftime("%A, %B %d, %Y at %I:%M%p")
   end
 
-  def commit_order
-    Stat.order(commits: :desc)
+  def self.commit_order
+    order(commits: :desc)
   end
 
-  def streak
-    Stat.order(streaks: :desc)
+  def self.current_streak
+    order(current_streaks: :desc)
   end
 
-  def current_streak
-    Stat.order(current_streaks: :desc)
+  def self.streak
+    order(streaks: :desc)
   end
 
-  def updated_at
-    Stat.first.when_created
+  def self.updated_at
+    first.when_created
   end
 end
