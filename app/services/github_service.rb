@@ -3,6 +3,7 @@ class GithubService
 
   def initialize
     @connection = Hurley::Client.new("https://api.github.com")
+    # connection.query[:access_token] = user.token
   end
 
   def find_user_repos(user)
@@ -15,6 +16,10 @@ class GithubService
 
   def find_user_follows(user)
     parse(connection.get("users/#{user}/following"))
+  end
+
+  def find_user_organizations(user)
+    parse(connection.get("users/#{user}/orgs"))
   end
 
   def parse(response)

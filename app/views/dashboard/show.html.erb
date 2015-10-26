@@ -5,13 +5,24 @@
     <h2 class="home"> <%= current_user.nickname %> </h2>
     <h2 class="home"> <%= current_user.email %> </h2>
     <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-lg btn-default btn-home" %>
+    <h2 class="home"> Contribution Summary</h2>
+    <br>
+    <div class="col-md-4 home">
+      Total Commits
+    </div>
+    <div class="col-md-4 home">
+      Total Commits
+    </div>
+    <div class="col-md-4 home">
+      Total Commits
+    </div>
   </div>
 
 
   <div class="col-md-4">
     <h2 class="home">Your Repos</h2>
     <ul>
-    <% @repos.each do |repo| %>
+    <% @info.repos.each do |repo| %>
     <li class="home"><%= repo %></li>
     <% end %>
   </div>
@@ -19,7 +30,7 @@
   <div class="col-md-4">
     <h2 class="home">Your Followers</h2>
     <ul>
-    <% @followers.each do |follower| %>
+    <% @info.followers.each do |follower| %>
     <li class="home"><%= follower %></li>
     <% end %>
   </div>
@@ -27,8 +38,16 @@
    <div class="col-md-4">
     <h2 class="home">Who You are Following?</h2>
     <ul>
-    <% @followees.each do |followee| %>
+    <% @info.followees.each do |followee| %>
     <li class="home"><%= followee %></li>
+    <% end %>
+  </div>
+
+  <div class="col-md-4">
+    <h2 class="home">Your Organizations</h2>
+    <ul>
+    <% @info.organizations.each do |org| %>
+    <li class="home"><%= org %></li>
     <% end %>
   </div>
 
