@@ -3,7 +3,7 @@ class Github
   attr_reader :user, :service
 
   def initialize(user)
-    @service ||= GithubService.new
+    @service ||= GithubService.new(user)
     @user    ||= user
   end
 
