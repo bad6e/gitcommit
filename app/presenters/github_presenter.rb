@@ -45,9 +45,7 @@ class GithubPresenter
   end
 
   def followers_activities
-    list = service.followers_activity(user).map {|data| build_object(data)}
-    followers = list.map {|follower| follower.login}
-    followers
+    service.followers_activity(user)
   end
 
   private
