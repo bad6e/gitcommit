@@ -3,7 +3,6 @@ class GithubService
 
   def initialize(user)
     @connection = Hurley::Client.new("https://api.github.com")
-    binding.pry
     @connection.query[:access_token] = user.token
   end
 
