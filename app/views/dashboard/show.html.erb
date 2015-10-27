@@ -19,6 +19,44 @@
     </div>
   </div>
 
+  <div class"container">
+    <div class="row">
+
+      <div class="col-md-4">
+        <h3 class="home">Your Repositories</h3>
+        <h4 class="home"><%= pluralize(@info.repos.count, 'Repository') %></h4>
+        <br>
+        <ol>
+          <% @info.repos.each do |repo| %>
+          <li class="home"><%= repo %></li>
+          <% end %>
+        </ol>
+      </div>
+
+      <div class="col-md-4">
+        <h3 class="home">Your Followers</h3>
+        <h4 class="home"><%= pluralize(@info.followers.count, 'person') %> are following you</h4>
+        <br>
+        <ol>
+          <% @info.followers.each do |follower| %>
+          <li class="home"><%= follower %></li>
+        <% end %>
+        </ol>
+      </div>
+
+      <div class="col-md-4">
+        <h3 class="home">Who You are Following?</h3>
+        <h4 class="home">You are following <%= pluralize(@info.followees.count, 'person') %></h4>
+        <br>
+        <ol>
+          <% @info.followees.each do |followee| %>
+          <li class="home"><%= followee %></li>
+        <% end %>
+        </ol>
+      </div>
+
+    </div>
+  </div>
 
   <div class"container">
     <div class="row">
@@ -46,7 +84,7 @@
       <div class="col-md-4">
         <h3 class="home">Summary Feed of my Followers</h3>
         <ol>
-          <% @info.followers_activities.each do |activity| %>
+          <% @info.followers_activity.each do |activity| %>
           <li class="home"><%= activity %></li>
           <% end %>
         </ol>
