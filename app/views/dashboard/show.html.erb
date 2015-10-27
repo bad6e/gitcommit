@@ -4,7 +4,7 @@
     <%= image_tag current_user.image_url, class: "img-circle img-thumbnail home-image" %>
     <h3 class="home"> <%= current_user.nickname %> </h2>
     <h2 class="home"> <%= current_user.email %> </h2>
-    <h4 class="home"><%= pluralize(@info.starred_repos, 'Repository')%> Starred</h4>
+    <h4 class="home"><%= pluralize(@user_info.starred_repos, 'Repository')%> Starred</h4>
     <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-lg btn-default btn-home" %>
     <h2 class="home" id="contrib-sum"> Contribution Summary</h2>
     <br>
@@ -27,21 +27,21 @@
 
       <div class="col-md-4">
         <h3 class="home">Your Repositories</h3>
-        <h4 class="home"><%= pluralize(@info.repos.count, 'Repository') %></h4>
+        <h4 class="home"><%= pluralize(@user_info.repos.count, 'Repository') %></h4>
         <br>
         <ol>
-          <% @info.repos.each do |repo| %>
-          <li class="home"><%= repo %></li>
+          <% @user_info.repos.each do |repo| %>
+            <li class="home"><%= repo %></li>
           <% end %>
         </ol>
       </div>
 
       <div class="col-md-4">
         <h3 class="home">Your Followers</h3>
-        <h4 class="home"><%= pluralize(@info.followers.count, 'person') %> are following you</h4>
+        <h4 class="home"><%= pluralize(@user_info.followers.count, 'person') %> are following you</h4>
         <br>
         <ol>
-          <% @info.followers.each do |follower| %>
+          <% @user_info.followers.each do |follower| %>
           <li class="home"><%= follower %></li>
         <% end %>
         </ol>
@@ -49,10 +49,10 @@
 
       <div class="col-md-4">
         <h3 class="home">Who You are Following?</h3>
-        <h4 class="home">You are following <%= pluralize(@info.followees.count, 'person') %></h4>
+        <h4 class="home">You are following <%= pluralize(@user_info.followees.count, 'person') %></h4>
         <br>
         <ol>
-          <% @info.followees.each do |followee| %>
+          <% @user_info.followees.each do |followee| %>
           <li class="home"><%= followee %></li>
         <% end %>
         </ol>
@@ -69,16 +69,14 @@
         <h4 class="home"><%= pluralize(@info.organizations.count, 'Organization') %></h4>
         <br>
         <ol>
-          <% @info.organizations.each do |org| %>
-          <li class="home"><%= org %></li>
-          <% end %>
+
         </ol>
       </div>
 
       <div class="col-md-4">
         <h3 class="home">Your Recent Commit Messages</h3>
         <ol>
-          <% @info.commit_messages.each do |message| %>
+          <% @user_info.commit_mess.each do |message| %>
           <li class="home"><%= message %></li>
           <% end %>
         </ol>
@@ -87,9 +85,9 @@
       <div class="col-md-4">
         <h3 class="home">Summary Feed of my Followers</h3>
         <ol>
-          <% @info.followers_activities.each do |activity| %>
-          <li class="home"><%= activity %></li>
-          <% end %>
+          <!-- <#% @info.followers_activities.each do |activity| %> -->
+          <!-- <li class="home"><#%= activity %></li> -->
+          <!-- <#% end %> -->
         </ol>
       </div>
 

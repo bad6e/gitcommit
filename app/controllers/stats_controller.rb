@@ -1,7 +1,7 @@
 class StatsController < ApplicationController
 
   def index
-    @stats ||= StatsPresenter.new
+    @stats     ||= StatsPresenter.new
   end
 
   private

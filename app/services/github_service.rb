@@ -18,7 +18,7 @@ class GithubService
 
   #This is who the user follows
   def find_user_follows(user)
-    @follows ||= parse(connection.get("users/#{user.nickname}/following"))
+    @follows = parse(connection.get("users/#{user.nickname}/following"))
   end
 
   def find_user_organizations(user)

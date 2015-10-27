@@ -46,7 +46,7 @@ class GithubPresenter
     list.count
   end
 
-  def commit_messages
+  def commit
     list = service.commit_message(user)
   end
 
