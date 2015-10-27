@@ -41,6 +41,7 @@ GEM
     autoprefixer-rails (6.0.3)
       execjs
       json
+    basiccache (1.0.0)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -69,6 +70,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    curb (0.8.8)
     database_cleaner (1.5.0)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
@@ -78,6 +80,10 @@ GEM
       multipart-post (>= 1.2, < 3)
     figaro (1.1.1)
       thor (~> 0.14)
+    githubstats (1.1.0)
+      basiccache (~> 1.0.0)
+      curb (~> 0.8.6)
+      nokogiri (~> 1.6.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.2)
@@ -224,6 +230,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_cleaner
   figaro
+  githubstats
   hurley
   jbuilder (~> 2.0)
   jquery-rails
