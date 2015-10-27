@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
     user.commit_messages  = GithubPresenter.new(user).commit
     user.followers        = GithubPresenter.new(user).followers
     user.followees        = GithubPresenter.new(user).followees
+    user.total_commits    = GithubPresenter.new(user).year_commits
+    user.current_streak   = GithubPresenter.new(user).current_streaks
+    user.longest_streak   = GithubPresenter.new(user).longest_streaks
     user.save
 
     user

@@ -33,4 +33,16 @@ class UserPresenter
   def followees
     user.followees.gsub("\"","").split(", ")[2..-2]
   end
+
+  def year_commits
+    user.total_commits
+  end
+
+  def current_streaks
+    user.current_streak
+  end
+
+  def longest_streaks
+    user.longest_streak
+  end
 end
