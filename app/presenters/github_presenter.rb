@@ -32,7 +32,15 @@ class GithubPresenter
   end
 
   def year_commits
-    list = service.find_user_total_commits(user).map {|data| build_object(data)}
+    list = service.find_user_total_commits(user)
+  end
+
+  def current_streaks
+    list = service.find_user_current_streak(user)
+  end
+
+  def longest_streaks
+    list = service.find_user_longest_streak(user)
   end
 
   def starred_repos

@@ -15,6 +15,7 @@ gem "whenever", require: false
 gem "hurley"
 gem "omniauth-github"
 gem "figaro"
+gem "githubstats"
 
 group :development, :test do
   gem "byebug"
