@@ -2,25 +2,24 @@
   <div class="col-md-12">
     <h1 class="home">You Are Authorized</h1>
     <%= image_tag current_user.image_url, class: "img-circle img-thumbnail home-image" %>
-    <h2 class="home"> <%= current_user.nickname %> </h2>
+    <h3 class="home"> <%= current_user.nickname %> </h2>
     <h2 class="home"> <%= current_user.email %> </h2>
     <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-lg btn-default btn-home" %>
-    <h2 class="home"> Contribution Summary</h2>
+    <h2 class="home" id="contrib-sum"> Contribution Summary</h2>
     <br>
     <div class="col-md-4 home">
-      Total Commits
+
     </div>
     <div class="col-md-4 home">
-      Total Commits
+      <h4>Current Streak</h4>
     </div>
     <div class="col-md-4 home">
-      Total Commits
+      <h4>Longest Streak</h4>
     </div>
   </div>
 
-
   <div class="col-md-4">
-    <h2 class="home">Your Repos</h2>
+    <h3 class="home">Your Repos</h3>
     <ul>
     <% @info.repos.each do |repo| %>
     <li class="home"><%= repo %></li>
@@ -28,7 +27,7 @@
   </div>
 
   <div class="col-md-4">
-    <h2 class="home">Your Followers</h2>
+    <h3 class="home">Your Followers</h3>
     <ul>
     <% @info.followers.each do |follower| %>
     <li class="home"><%= follower %></li>
@@ -36,7 +35,7 @@
   </div>
 
    <div class="col-md-4">
-    <h2 class="home">Who You are Following?</h2>
+    <h3 class="home">Who You are Following?</h3>
     <ul>
     <% @info.followees.each do |followee| %>
     <li class="home"><%= followee %></li>
@@ -44,12 +43,13 @@
   </div>
 
   <div class="col-md-4">
-    <h2 class="home">Your Organizations</h2>
+    <h3 class="home">Your Organizations</h3>
     <ul>
     <% @info.organizations.each do |org| %>
     <li class="home"><%= org %></li>
     <% end %>
   </div>
+
 
 
 <div class="container">

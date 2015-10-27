@@ -3,6 +3,7 @@ class GithubService
 
   def initialize(user)
     @connection = Hurley::Client.new("https://api.github.com")
+
   end
 
   def find_user_repos(user)
@@ -19,6 +20,10 @@ class GithubService
 
   def find_user_organizations(user)
     parse(connection.get("users/#{user.nickname}/orgs"))
+  end
+
+  def find_user_total_commits(user)
+    parse(connection.get("repos/#{user.nickname}/gitcommit/stats/commit_activity"))
   end
 
   def parse(response)

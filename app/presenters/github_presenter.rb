@@ -1,4 +1,4 @@
-class Github
+class GithubPresenter
 
   attr_reader :user, :service
 
@@ -29,6 +29,10 @@ class Github
     list = service.find_user_organizations(user).map {|data| build_object(data)}
     organizations = list.map {|organization| organization}
     organizations
+  end
+
+  def year_commits
+    list = service.find_user_total_commits(user).map {|data| build_object(data)}
   end
 
   private
