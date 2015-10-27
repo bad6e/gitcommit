@@ -4,7 +4,7 @@ class GithubService
   def initialize(user)
     @connection                      = Hurley::Client.new("https://api.github.com")
     @connection.query[:access_token] = user.token
-    @stats                           = GithubStats.new('#{user.nickname}')
+    @stats                           = GithubStats.new('bad6e')
   end
 
   def find_user_repos(user)
@@ -28,11 +28,11 @@ class GithubService
   end
 
   def find_user_current_streak(user)
-    @stats.stats.streak.count
+    @stats.streak.count
   end
 
   def find_user_longest_streak(user)
-    @stats.stats.longest_streak.count
+    @stats.longest_streak.count
   end
 
   def total_starred_repos(user)
