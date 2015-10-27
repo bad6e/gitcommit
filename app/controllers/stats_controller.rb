@@ -10,4 +10,3 @@ class StatsController < ApplicationController
     params.require(:record).permit(:name, :commits, :streaks, :current_streaks)
   end
 end
-
