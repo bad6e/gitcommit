@@ -3,6 +3,8 @@ class GithubService
 
   def initialize(user)
     @connection = Hurley::Client.new("https://api.github.com")
+    binding.pry
+    @connection.query[:access_token] = user.token
   end
 
   def find_user_repos(user)
@@ -34,6 +36,7 @@ class GithubService
     events    = list.select { |item| item[:type] == "PushEvent" }
     commits   = events.map{ |event| event[:payload][:commits] }.flatten!
     messages  = commits.collect{ |commit|  commit[:message] }
+    messages[0..9]
   end
 
   def followers_commit_message(name)
@@ -45,11 +48,15 @@ class GithubService
 
   def followers_activity(user)
     list = find_followers(user)
-    names = list.collect { |item| item[:login] }
+    names = list.collect {|item| item[:login] }
     messages = names.map do |name|
       followers_commit_message(name)
     end
-    messages
+    limited_messages = messages.map do |m|
+      m[0..2]
+    end
+    final = names.zip(limited_messages)
+    final
   end
 
   def parse(response)
