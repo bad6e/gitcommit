@@ -44,6 +44,12 @@ class GithubPresenter
     list = service.commit_message(user)
   end
 
+  def followers_activities
+    list = service.followers_activity(user).map {|data| build_object(data)}
+    followers = list.map {|follower| follower.login}
+    followers
+  end
+
   private
 
   def build_object(data)

@@ -24,6 +24,8 @@ group :development, :test do
   gem "launchy"
   gem "pry"
   gem "shoulda-matchers"
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :development do
