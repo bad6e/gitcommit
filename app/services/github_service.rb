@@ -4,7 +4,7 @@ class GithubService
   def initialize(user)
     @connection                      = Hurley::Client.new("https://api.github.com")
     @connection.query[:access_token] = user.token
-    @stats                           = GithubStats.new('bad6e')
+    @stats                           = GithubStats.new(user.nickname)
   end
 
   def find_user_repos(user)
