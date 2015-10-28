@@ -51,10 +51,14 @@ class GithubService
 
   def followers_commit_message(name)
     list      = parse(connection.get("/users/#{name}/events"))
-    events    = list.select { |item| item[:type] == "PushEvent" }
-    commits   = events.map{ |event| event[:payload][:commits] }.flatten!
-    messages  = commits.collect{ |commit|  commit[:message] }
-    messages[0]
+    if list == "[]"
+      ["User has no events"]
+    else
+      events    = list.select { |item| item[:type] == "PushEvent" }
+      commits   = events.map{ |event| event[:payload][:commits] }.flatten!
+      messages  = commits.collect{ |commit|  commit[:message] }
+      messages[0]
+    end
   end
 
   def followers_activity(user)
