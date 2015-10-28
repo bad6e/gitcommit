@@ -10,7 +10,9 @@ class UserPresenter
     if user.repos == "[]"
       ["You have no repositories!"]
     else
-      user.repos.gsub("\"","").split(", ")[2..-2]
+      user.repos.gsub("\"","").split(", ").map do |r|
+        r.gsub("[","").gsub("]","")
+      end
     end
   end
 
@@ -26,7 +28,9 @@ class UserPresenter
     if user.commit_messages == "[\"User has no commits\"]"
       ["You have no commit messages"]
     else
-      user.commit_messages.gsub("\"","").split(", ")[2..-2]
+      user.commit_messages.gsub("\"","").split(", ").map do |r|
+        r.gsub("[","").gsub("]","")
+      end
     end
   end
 
@@ -34,23 +38,31 @@ class UserPresenter
     if user.organizations == "[]"
       ["You have no organizations!"]
     else
-      user.organizations.gsub("\"","").split(", ")[2..-2]
+      user.organizations.gsub("\"","").split(", ").map do |r|
+        r.gsub("[","").gsub("]","")
+      end
     end
   end
 
+ #This who is following the user
   def followers
     if user.followers == "[]"
       ["You have no followers LOSER!"]
     else
-      user.followers.gsub("\"","").split(", ")[2..-2]
+      user.followers.gsub("\"","").split(", ").map do |r|
+        r.gsub("[","").gsub("]","")
+      end
     end
   end
 
+#This is who the user follows
   def followees
     if user.followees == "[]"
       ["You are not following anyone!"]
     else
-      user.followees.gsub("\"","").split(", ")[2..-2]
+      user.followees.gsub("\"","").split(", ").map do |r|
+        r.gsub("[","").gsub("]","")
+      end
     end
   end
 

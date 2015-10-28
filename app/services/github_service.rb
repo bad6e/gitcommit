@@ -51,8 +51,8 @@ class GithubService
   end
 
   def followers_commit_message(name)
-    list      = parse(connection.get("/users/#{name}/events"))
-    if list == "[]"
+    list = parse(connection.get("/users/#{name}/events"))
+    if list == []
       ["User has no events"]
     else
       find_events_from_list(list)
@@ -61,7 +61,7 @@ class GithubService
 
   def find_events_from_list(list)
     events = list.select { |item| item[:type] == "PushEvent" }
-    if events == "[]"
+    if events == []
       ["User has no Push Events"]
     else
       find_commits_from_events(events)
