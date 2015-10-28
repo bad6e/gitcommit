@@ -23,7 +23,7 @@ class UserPresenter
   end
 
   def commit_mess
-    if user.commit_messages == "[]"
+    if user.commit_messages == "[\"User has no commits\"]"
       ["You have no commit messages"]
     else
       user.commit_messages.gsub("\"","").split(", ")[2..-2]
@@ -67,7 +67,7 @@ class UserPresenter
   end
 
   def followers_activities
-    if user.follower_messages == "[]"
+    if user.follower_messages == "{}"
       ["None of your friends are coding"]
     else
       user.follower_messages.gsub("\"","").gsub("\\","").gsub("{","").gsub("}","").split(", ")

@@ -42,11 +42,12 @@ class GithubService
   end
 
   def commit_message(user)
-    list      = parse(connection.get("/users/#{user.nickname}/events"))
-    events    = list.select { |item| item[:type] == "PushEvent" }
-    commits   = events.map{ |event| event[:payload][:commits] }.flatten!
-    messages  = commits.collect{ |commit|  commit[:message] }
-    messages[0..9]
+    list = parse(connection.get("/users/#{user.nickname}/events"))
+    if list == "[]"
+      ["User has no events"]
+    else
+      find_events_from_list(list)
+    end
   end
 
   def followers_commit_message(name)
@@ -54,12 +55,45 @@ class GithubService
     if list == "[]"
       ["User has no events"]
     else
-      events    = list.select { |item| item[:type] == "PushEvent" }
-      commits   = events.map{ |event| event[:payload][:commits] }.flatten!
-      messages  = commits.collect{ |commit|  commit[:message] }
-      messages[0]
+      find_events_from_list(list)
     end
   end
+
+  def find_events_from_list(list)
+    events = list.select { |item| item[:type] == "PushEvent" }
+    if events == "[]"
+      ["User has no Push Events"]
+    else
+      find_commits_from_events(events)
+    end
+  end
+
+  def find_commits_from_events(events)
+    commits = events.map{ |event| event[:payload][:commits] }.flatten!
+    if commits.nil?
+      ["User has no commits"]
+    else
+      find_messages_from_commits_user(commits)
+    end
+  end
+
+  def find_messages_from_commits_user(commits)
+    messages  = commits.collect{ |commit| commit[:message] }
+    if messages == "[]"
+      ["User has no commit messages"]
+    else
+      messages[0..9]
+    end
+  end
+
+  # def find_messages_from_commits(commits)
+  #   messages  = commits.collect{ |commit| commit[:message] }
+  #   if messages == "[]"
+  #     ["User has no commit messages"]
+  #   else
+  #     messages[0]
+  #   end
+  # end
 
   def followers_activity(user)
     names = find_user_follows(user).collect {|item| item[:login] }
