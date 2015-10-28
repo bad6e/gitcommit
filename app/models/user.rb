@@ -4,20 +4,20 @@ class User < ActiveRecord::Base
 
     user.update_attributes(
 
-    user.email              = oauth.info.email
-    user.nickname           = oauth.info.nickname
-    user.image_url          = oauth.info.image
-    user.token              = oauth.credentials.token
-    user.repos              = GithubPresenter.new(user).repos
-    user.starred_repos      = GithubPresenter.new(user).starred_repos
-    user.organizations      = GithubPresenter.new(user).organizations
-    user.commit_messages    = GithubPresenter.new(user).commit
-    user.followers          = GithubPresenter.new(user).followers
-    user.followees          = GithubPresenter.new(user).followees
-    user.total_commits      = GithubPresenter.new(user).year_commits
-    user.current_streak     = GithubPresenter.new(user).current_streaks
-    user.longest_streak     = GithubPresenter.new(user).longest_streaks
-    user.follower_messages  = GithubPresenter.new(user).followers_activities
+    email:              oauth.info.email,
+    nickname:           oauth.info.nickname,
+    image_url:          oauth.info.image,
+    token:              oauth.credentials.token,
+    repos:              GithubPresenter.new(user).repos,
+    starred_repos:      GithubPresenter.new(user).starred_repos,
+    organizations:      GithubPresenter.new(user).organizations,
+    commit_messages:    GithubPresenter.new(user).commit,
+    followers:          GithubPresenter.new(user).followers,
+    followees:          GithubPresenter.new(user).followees,
+    total_commits:      GithubPresenter.new(user).year_commits,
+    current_streak:     GithubPresenter.new(user).current_streaks,
+    longest_streak:     GithubPresenter.new(user).longest_streaks,
+    follower_messages:  GithubPresenter.new(user).followers_activities,
 
     )
 
