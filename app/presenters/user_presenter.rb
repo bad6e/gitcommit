@@ -19,15 +19,11 @@ class UserPresenter
   end
 
   def organizations
-    if user.organizations
-      user.organizations.gsub("\"","").split(", ")[2..-2]
-    end
+    user.organizations.gsub("\"","").split(", ")[2..-2]
   end
 
   def followers
-    if user.followers
-      user.followers.gsub("\"","").split(", ")[2..-2]
-    end
+    user.followers.gsub("\"","").split(", ")[2..-2]
   end
 
   def followees
@@ -47,6 +43,6 @@ class UserPresenter
   end
 
   def followers_activities
-    user.follower_messages.gsub("\"","").split(", ")
+    user.follower_messages.gsub("\"","").gsub("\\","").gsub("{","").gsub("}","").split(", ")
   end
 end

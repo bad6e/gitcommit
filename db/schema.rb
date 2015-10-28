@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027235837) do
+ActiveRecord::Schema.define(version: 20151028010611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,18 +32,18 @@ ActiveRecord::Schema.define(version: 20151027235837) do
     t.string   "token"
     t.string   "uid"
     t.string   "image_url"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "repos"
-    t.integer  "starred_repos"
-    t.text     "commit_messages"
-    t.text     "organizations"
-    t.text     "followers"
-    t.text     "followees"
-    t.integer  "total_commits"
-    t.integer  "current_streak"
-    t.integer  "longest_streak"
-    t.text     "follower_messages"
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
+    t.text     "repos",             default: "You have no repositories!"
+    t.integer  "starred_repos",     default: 0
+    t.text     "commit_messages",   default: "You have no commit messages!"
+    t.text     "organizations",     default: "You have no organizations"
+    t.text     "followers",         default: "No one is following you - LOSER!"
+    t.text     "followees",         default: "You are not following anyone!"
+    t.integer  "total_commits",     default: 0
+    t.integer  "current_streak",    default: 0
+    t.integer  "longest_streak",    default: 0
+    t.text     "follower_messages", default: "No Commit Messages!"
   end
 
 end

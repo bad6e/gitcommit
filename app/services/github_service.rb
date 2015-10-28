@@ -54,7 +54,7 @@ class GithubService
     events    = list.select { |item| item[:type] == "PushEvent" }
     commits   = events.map{ |event| event[:payload][:commits] }.flatten!
     messages  = commits.collect{ |commit|  commit[:message] }
-    messages[0..2]
+    messages[0]
   end
 
   def followers_activity(user)
@@ -62,7 +62,8 @@ class GithubService
     messages = names.map do |name|
       followers_commit_message(name)
     end
-    final = names.zip(messages)
+    follower_messages = names.zip(messages)
+    results           = Hash[follower_messages.map {|key, value| [key, value]}]
   end
 
   def parse(response)
