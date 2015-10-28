@@ -11,10 +11,12 @@ class GithubService
     parse(connection.get("users/#{user.nickname}/repos"))
   end
 
+  #This who is following the user
   def find_followers(user)
     parse(connection.get("users/#{user.nickname}/followers"))
   end
 
+  #This is who the user follows
   def find_user_follows(user)
     parse(connection.get("users/#{user.nickname}/following"))
   end
@@ -52,19 +54,16 @@ class GithubService
     events    = list.select { |item| item[:type] == "PushEvent" }
     commits   = events.map{ |event| event[:payload][:commits] }.flatten!
     messages  = commits.collect{ |commit|  commit[:message] }
+    messages[0]
   end
 
   def followers_activity(user)
-    list = find_followers(user)
-    names = list.collect {|item| item[:login] }
+    names = find_user_follows(user).collect {|item| item[:login] }
     messages = names.map do |name|
       followers_commit_message(name)
     end
-    limited_messages = messages.map do |m|
-      m[0..2]
-    end
-    final = names.zip(limited_messages)
-    final
+    follower_messages = names.zip(messages)
+    results           = Hash[follower_messages.map {|key, value| [key, value]}]
   end
 
   def parse(response)
