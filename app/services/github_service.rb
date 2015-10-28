@@ -42,8 +42,6 @@ class GithubService
     parse(connection.get("users/#{user.nickname}/starred"))
   end
 
-
-
   def commit_message(user)
     list = parse(connection.get("/users/#{user.nickname}/events"))
     if list == "[]"
