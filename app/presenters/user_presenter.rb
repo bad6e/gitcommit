@@ -7,27 +7,51 @@ class UserPresenter
   end
 
   def repos
-    user.repos.gsub("\"","").split(", ")[2..-2]
+    if user.repos == "[]"
+      ["You have no repositories!"]
+    else
+      user.repos.gsub("\"","").split(", ")[2..-2]
+    end
   end
 
   def starred_repos
-    user.starred_repos
+    if user.starred_repos == "[]"
+      ["You have no starred repositories!"]
+    else
+      user.starred_repos
+    end
   end
 
   def commit_mess
-    user.commit_messages.gsub("\"","").split(", ")[2..-2]
+    if user.commit_messages == "[]"
+      ["You have no commit messages"]
+    else
+      user.commit_messages.gsub("\"","").split(", ")[2..-2]
+    end
   end
 
   def organizations
-    user.organizations.gsub("\"","").split(", ")[2..-2]
+    if user.organizations == "[]"
+      ["You have no organizations!"]
+    else
+      user.organizations.gsub("\"","").split(", ")[2..-2]
+    end
   end
 
   def followers
-    user.followers.gsub("\"","").split(", ")[2..-2]
+    if user.followers == "[]"
+      ["You have no followers LOSER!"]
+    else
+      user.followers.gsub("\"","").split(", ")[2..-2]
+    end
   end
 
   def followees
-    user.followees.gsub("\"","").split(", ")[2..-2]
+    if user.followees == "[]"
+      ["You are not following anyone!"]
+    else
+      user.followees.gsub("\"","").split(", ")[2..-2]
+    end
   end
 
   def year_commits
@@ -43,6 +67,10 @@ class UserPresenter
   end
 
   def followers_activities
-    user.follower_messages.gsub("\"","").gsub("\\","").gsub("{","").gsub("}","").split(", ")
+    if user.follower_messages == "[]"
+      ["None of your friends are coding"]
+    else
+      user.follower_messages.gsub("\"","").gsub("\\","").gsub("{","").gsub("}","").split(", ")
+    end
   end
 end

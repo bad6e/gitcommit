@@ -27,35 +27,28 @@
 
       <div class="col-md-4">
         <h3 class="home">Your Repositories</h3>
-        <h4 class="home"><%= pluralize(@user_info.repos.count, 'Repository') %></h4>
         <br>
         <ol>
-          <% @user_info.repos.each do |repo| %>
-            <li class="home"><%= repo %></li>
-          <% end %>
-        </ol>
+        <% @user_info.repos.each do |repo| %>
+          <p class="home"><%= repo %></p>
+        <% end %>
       </div>
 
       <div class="col-md-4">
         <h3 class="home">Your Followers</h3>
-        <h4 class="home"><%= pluralize(@user_info.followers.count, 'person') %> are following you</h4>
         <br>
-        <ol>
-          <% @user_info.followers.each do |follower| %>
-          <li class="home"><%= follower %></li>
+        <% @user_info.followers.each do |follower| %>
+          <p class="home"><%= follower %></p>
         <% end %>
-        </ol>
+
       </div>
 
       <div class="col-md-4">
         <h3 class="home">Who You are Following?</h3>
-        <h4 class="home">You are following <%= pluralize(@user_info.followees.count, 'person') %></h4>
         <br>
-        <ol>
-          <% @user_info.followees.each do |followee| %>
-          <li class="home"><%= followee %></li>
+        <% @user_info.followees.each do |followee| %>
+          <p class="home"><%= followee %></p>
         <% end %>
-        </ol>
       </div>
 
     </div>
@@ -65,37 +58,25 @@
     <div class="row">
 
       <div class="col-md-4">
-
         <h3 class="home">Your Organizations</h3>
-        <h4 class="home"><%= pluralize(@info.organizations.count, 'Organization') %></h4>
         <br>
-        <% if @user_info.organizations.nil? %>
-          <p class="home">You have no organizations!</p>
-        <% else %>
-          <ol>
-            <% @user_info.organizations.each do |org| %>
-              <li class="home"><%= org %></li>
-            <% end %>
-          </ol>
+        <% @user_info.organizations.each do |org| %>
+          <p class="home"><%= org %></p>
         <% end %>
       </div>
 
       <div class="col-md-4">
         <h3 class="home">Your Recent Commit Messages</h3>
-        <ol>
-          <% @user_info.commit_mess.each do |message| %>
-          <li class="home"><%= message %></li>
-          <% end %>
-        </ol>
+        <% @user_info.commit_mess.each do |message| %>
+        <p class="home"><%= message %></p>
+        <% end %>
       </div>
 
       <div class="col-md-4">
         <h3 class="home">Summary Feed of my Followers</h3>
-        <ol>
-         <% @user_info.followers_activities.each do |activity| %>
-          <li class="home"><%= activity %></li>
-          <% end %>
-        </ol>
+        <% @user_info.followers_activities.each do |activity| %>
+          <p class="home"><%= activity %></p>
+        <% end %>
       </div>
 
     </div>
