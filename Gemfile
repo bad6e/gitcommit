@@ -17,6 +17,7 @@ gem "omniauth-github"
 gem "figaro"
 gem "githubstats"
 
+gem 'rails_12factor'
 group :development, :test do
   gem "byebug"
   gem "rspec-rails"
