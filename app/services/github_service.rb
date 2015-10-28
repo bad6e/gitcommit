@@ -18,7 +18,7 @@ class GithubService
 
   #This is who the user follows
   def find_user_follows(user)
-    @follows = parse(connection.get("users/#{user.nickname}/following"))
+    parse(connection.get("users/#{user.nickname}/following"))
   end
 
   def find_user_organizations(user)
@@ -58,7 +58,7 @@ class GithubService
   end
 
   def followers_activity(user)
-    names = @follows.collect {|item| item[:login] }
+    names = find_user_follows(user).collect {|item| item[:login] }
     messages = names.map do |name|
       followers_commit_message(name)
     end

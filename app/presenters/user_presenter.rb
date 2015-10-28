@@ -45,4 +45,8 @@ class UserPresenter
   def longest_streaks
     user.longest_streak
   end
+
+  def followers_activities
+    user.follower_messages.gsub("\"","").split(", ")
+  end
 end

@@ -85,9 +85,9 @@
       <div class="col-md-4">
         <h3 class="home">Summary Feed of my Followers</h3>
         <ol>
-          <!-- <#% @info.followers_activities.each do |activity| %> -->
-          <!-- <li class="home"><#%= activity %></li> -->
-          <!-- <#% end %> -->
+         <% @user_info.followers_activities.each do |activity| %>
+          <li class="home"><%= activity %></li>
+          <% end %>
         </ol>
       </div>
 
