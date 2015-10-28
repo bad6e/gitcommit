@@ -5,6 +5,7 @@ class GithubService
     @connection                      = Hurley::Client.new("https://api.github.com")
     @connection.query[:access_token] = user.token
     @stats                           = GithubStats.new(user.nickname)
+    @user                            = user
   end
 
   def find_user_repos(user)
@@ -41,12 +42,14 @@ class GithubService
     parse(connection.get("users/#{user.nickname}/starred"))
   end
 
+
+
   def commit_message(user)
     list = parse(connection.get("/users/#{user.nickname}/events"))
     if list == "[]"
       ["User has no events"]
     else
-      find_events_from_list(list)
+      find_events_from_list(list, user)
     end
   end
 
@@ -55,25 +58,33 @@ class GithubService
     if list == []
       ["User has no events"]
     else
-      find_events_from_list(list)
+      find_events_from_list(list, name)
     end
   end
 
-  def find_events_from_list(list)
+  def find_events_from_list(list, user_id)
     events = list.select { |item| item[:type] == "PushEvent" }
     if events == []
       ["User has no Push Events"]
     else
-      find_commits_from_events(events)
+      find_commits_from_events(events, user_id)
     end
   end
 
-  def find_commits_from_events(events)
+  def find_commits_from_events(events, user_id)
     commits = events.map{ |event| event[:payload][:commits] }.flatten!
     if commits.nil?
       ["User has no commits"]
     else
-      find_messages_from_commits_user(commits)
+      user_redirect(commits, user_id)
+    end
+  end
+
+  def user_redirect(commits, user_id)
+    if @user == user_id
+        find_messages_from_commits_user(commits)
+    else
+        find_messages_from_commits(commits)
     end
   end
 
@@ -86,14 +97,14 @@ class GithubService
     end
   end
 
-  # def find_messages_from_commits(commits)
-  #   messages  = commits.collect{ |commit| commit[:message] }
-  #   if messages == "[]"
-  #     ["User has no commit messages"]
-  #   else
-  #     messages[0]
-  #   end
-  # end
+  def find_messages_from_commits(commits)
+    messages  = commits.collect{ |commit| commit[:message] }
+    if messages == "[]"
+      ["User has no commit messages"]
+    else
+      messages[0]
+    end
+  end
 
   def followers_activity(user)
     names = find_user_follows(user).collect {|item| item[:login] }
