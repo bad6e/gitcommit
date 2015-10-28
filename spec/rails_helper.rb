@@ -7,22 +7,23 @@ require 'spec_helper'
 require 'rspec/rails'
 
 
-OmniAuth.config.test_mode = true
-   omniauth_hash = { 'provider' => 'github',
-                      'uid' => '12345',
-                      'info' => {
-                          'name' => 'bret',
-                          'email' => 'bret@iscool.com',
-                          'nickname' => 'bad6e'
-                      },
-                      'extra' => {'raw_info' =>
-                                      { 'location' => 'Planet Neptune',
-                                        'gravatar_id' => '123456789'
-                                      }
-                      }
-    }
+# OmniAuth.config.test_mode = true
+#    omniauth_hash = { 'provider' => 'github',
+#                       'uid' => '12345',
+#                       'info' => {
+#                           'name' => 'bret',
+#                           'email' => 'bret@iscool.com',
+#                           'nickname' => 'bad6e'
 
-OmniAuth.config.add_mock(:github, omniauth_hash)
+#                       },
+#                       'extra' => {'raw_info' =>
+#                                       { 'location' => 'Planet Neptune',
+#                                         'gravatar_id' => '123456789'
+#                                       }
+#                       }
+#     }
+
+# OmniAuth.config.add_mock(:github, omniauth_hash)
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
