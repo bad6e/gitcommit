@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   def self.find_or_create_from_oauth(oauth)
     user = User.find_or_create_by(provider: oauth.provider, uid: oauth.uid)
+
+    user.update_attributes(
+
     user.email              = oauth.info.email
     user.nickname           = oauth.info.nickname
     user.image_url          = oauth.info.image
@@ -15,7 +18,8 @@ class User < ActiveRecord::Base
     user.current_streak     = GithubPresenter.new(user).current_streaks
     user.longest_streak     = GithubPresenter.new(user).longest_streaks
     user.follower_messages  = GithubPresenter.new(user).followers_activities
-    user.save
+
+    )
 
     user
   end
