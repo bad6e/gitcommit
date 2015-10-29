@@ -19,7 +19,6 @@ gem "githubstats"
 gem 'rails_12factor'
 
 group :development, :test do
-  gem "byebug"
   gem "rspec-rails"
   gem "database_cleaner"
   gem "capybara"
@@ -33,5 +32,10 @@ end
 group :development do
   gem "web-console", "~> 2.0"
   gem "spring"
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
 
