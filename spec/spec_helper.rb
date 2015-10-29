@@ -15,6 +15,6 @@ RSpec.configure do |config|
                        email: nil,
                        nickname: '1507GitCommitTest',
                        image_url: "https://avatars.githubusercontent.com/u/15368238?v...",
-                       token: '891bef4db51f9526e0cbd4d82c1a1fe09a15cd6e')
+                       token: ENV['user_token'])
   end
 end

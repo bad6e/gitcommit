@@ -20,4 +20,9 @@ feature "visitor can log in" do
     expect(page).to have_content("bad6e")
     expect(page).to have_content("bret@iscool.com")
   end
+
+  scenario "vistor can see module github stats" do
+    visit root_path
+    click_button "See Statistics"
+  end
 end

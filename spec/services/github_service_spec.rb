@@ -82,6 +82,14 @@ RSpec.describe "Github API", type: :request do
                        nickname: 'TEST',
                        image_url: "https://bret@iscool.com",
                        token: '1234ABcd')
+
+         @fake_user ||= User.new(provider: 'github1',
+                       uid: '0001',
+                       email: nil,
+                       nickname: 'TEST1',
+                       image_url: "https://bret@iscool1.com",
+                       token: '1234ABcd1')
+
       end
 
     context "user has no events" do
@@ -92,7 +100,7 @@ RSpec.describe "Github API", type: :request do
     end
 
     context "user has events" do
-      it "calls the next thing" do
+      it "calls find_events_from_list" do
         expect_any_instance_of(GithubService).to receive(:parse).and_return("[I have events!]")
         expect_any_instance_of(GithubService).to receive(:find_events_from_list).with("[I have events!]", @fake_user)
         GithubService.new(@fake_user).commit_message(@fake_user)
