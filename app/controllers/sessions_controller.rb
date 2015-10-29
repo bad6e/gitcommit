@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_from_oauth(oauth)
 
     if @user
-      session[:user_id] = @user.id
+      log_in(user)
       redirect_to dashboard_path
     else
       redirect_to root_path
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 
   private
 
-  def oauth
-    request.env['omniauth.auth']
-  end
+    def oauth
+      request.env['omniauth.auth']
+    end
 end
