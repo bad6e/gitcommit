@@ -7,24 +7,31 @@
     <h4 class="home"><%= pluralize(@user_info.starred_repos, 'Repository')%> Starred</h4>
     <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-lg btn-default btn-home" %>
     <h2 class="home" id="contrib-sum"> Contribution Summary</h2>
-    <br>
-    <div class="col-md-4 home">
-      <h4>Total Commits</h4>
-      <p><%= @user_info.year_commits %></pr>
+
+
+    <button class="btn btn-lg btn-default btn-home" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Click Here for Stats
+    </button>
+
+
+    <div class="collapse" id="collapseExample">
+      <div class="col-md-4 home">
+        <h4>Total Commits</h4>
+        <p><%= @user_info.year_commits %></pr>
+      </div>
+      <div class="col-md-4 home">
+        <h4>Current Streak</h4>
+        <p><%= @user_info.current_streaks %></pr>
+      </div>
+      <div class="col-md-4 home">
+        <h4>Longest Streak</h4>
+        <p><%= @user_info.longest_streaks %></pr>
+      </div>
     </div>
-    <div class="col-md-4 home">
-      <h4>Current Streak</h4>
-      <p><%= @user_info.current_streaks %></pr>
-    </div>
-    <div class="col-md-4 home">
-      <h4>Longest Streak</h4>
-      <p><%= @user_info.longest_streaks %></pr>
-    </div>
-  </div>
 
   <div class"container">
     <div class="row">
-
+       <br>
       <div class="col-md-4">
         <h3 class="home">Your Repositories</h3>
         <br>
