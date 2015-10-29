@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/users/1507GitCommitTest/repos?access_token=891bef4db51f9526e0cbd4d82c1a1fe09a15cd6e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 29 Oct 2015 01:49:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4995'
+      X-Ratelimit-Reset:
+      - '1446085991'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"c7fb36bfa844d110fa096bee7adaa96f"
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - 1f940dea396a2b997081
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - a6882e5cd2513376cb9481dbcd83f3a2
+      X-Github-Request-Id:
+      - 4999852B:7FBA:12474BA:56317B28
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":45153323,"name":"test_2","full_name":"1507GitCommitTest/test_2","owner":{"login":"1507GitCommitTest","id":15368238,"avatar_url":"https://avatars.githubusercontent.com/u/15368238?v=3","gravatar_id":"","url":"https://api.github.com/users/1507GitCommitTest","html_url":"https://github.com/1507GitCommitTest","followers_url":"https://api.github.com/users/1507GitCommitTest/followers","following_url":"https://api.github.com/users/1507GitCommitTest/following{/other_user}","gists_url":"https://api.github.com/users/1507GitCommitTest/gists{/gist_id}","starred_url":"https://api.github.com/users/1507GitCommitTest/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/1507GitCommitTest/subscriptions","organizations_url":"https://api.github.com/users/1507GitCommitTest/orgs","repos_url":"https://api.github.com/users/1507GitCommitTest/repos","events_url":"https://api.github.com/users/1507GitCommitTest/events{/privacy}","received_events_url":"https://api.github.com/users/1507GitCommitTest/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/1507GitCommitTest/test_2","description":"","fork":false,"url":"https://api.github.com/repos/1507GitCommitTest/test_2","forks_url":"https://api.github.com/repos/1507GitCommitTest/test_2/forks","keys_url":"https://api.github.com/repos/1507GitCommitTest/test_2/keys{/key_id}","collaborators_url":"https://api.github.com/repos/1507GitCommitTest/test_2/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/1507GitCommitTest/test_2/teams","hooks_url":"https://api.github.com/repos/1507GitCommitTest/test_2/hooks","issue_events_url":"https://api.github.com/repos/1507GitCommitTest/test_2/issues/events{/number}","events_url":"https://api.github.com/repos/1507GitCommitTest/test_2/events","assignees_url":"https://api.github.com/repos/1507GitCommitTest/test_2/assignees{/user}","branches_url":"https://api.github.com/repos/1507GitCommitTest/test_2/branches{/branch}","tags_url":"https://api.github.com/repos/1507GitCommitTest/test_2/tags","blobs_url":"https://api.github.com/repos/1507GitCommitTest/test_2/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/1507GitCommitTest/test_2/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/1507GitCommitTest/test_2/git/refs{/sha}","trees_url":"https://api.github.com/repos/1507GitCommitTest/test_2/git/trees{/sha}","statuses_url":"https://api.github.com/repos/1507GitCommitTest/test_2/statuses/{sha}","languages_url":"https://api.github.com/repos/1507GitCommitTest/test_2/languages","stargazers_url":"https://api.github.com/repos/1507GitCommitTest/test_2/stargazers","contributors_url":"https://api.github.com/repos/1507GitCommitTest/test_2/contributors","subscribers_url":"https://api.github.com/repos/1507GitCommitTest/test_2/subscribers","subscription_url":"https://api.github.com/repos/1507GitCommitTest/test_2/subscription","commits_url":"https://api.github.com/repos/1507GitCommitTest/test_2/commits{/sha}","git_commits_url":"https://api.github.com/repos/1507GitCommitTest/test_2/git/commits{/sha}","comments_url":"https://api.github.com/repos/1507GitCommitTest/test_2/comments{/number}","issue_comment_url":"https://api.github.com/repos/1507GitCommitTest/test_2/issues/comments{/number}","contents_url":"https://api.github.com/repos/1507GitCommitTest/test_2/contents/{+path}","compare_url":"https://api.github.com/repos/1507GitCommitTest/test_2/compare/{base}...{head}","merges_url":"https://api.github.com/repos/1507GitCommitTest/test_2/merges","archive_url":"https://api.github.com/repos/1507GitCommitTest/test_2/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/1507GitCommitTest/test_2/downloads","issues_url":"https://api.github.com/repos/1507GitCommitTest/test_2/issues{/number}","pulls_url":"https://api.github.com/repos/1507GitCommitTest/test_2/pulls{/number}","milestones_url":"https://api.github.com/repos/1507GitCommitTest/test_2/milestones{/number}","notifications_url":"https://api.github.com/repos/1507GitCommitTest/test_2/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/1507GitCommitTest/test_2/labels{/name}","releases_url":"https://api.github.com/repos/1507GitCommitTest/test_2/releases{/id}","created_at":"2015-10-29T01:48:54Z","updated_at":"2015-10-29T01:49:01Z","pushed_at":"2015-10-29T01:48:54Z","git_url":"git://github.com/1507GitCommitTest/test_2.git","ssh_url":"git@github.com:1507GitCommitTest/test_2.git","clone_url":"https://github.com/1507GitCommitTest/test_2.git","svn_url":"https://github.com/1507GitCommitTest/test_2","homepage":null,"size":0,"stargazers_count":1,"watchers_count":1,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":1,"default_branch":"master","permissions":{"admin":true,"push":true,"pull":true}},{"id":45138791,"name":"test_repo","full_name":"1507GitCommitTest/test_repo","owner":{"login":"1507GitCommitTest","id":15368238,"avatar_url":"https://avatars.githubusercontent.com/u/15368238?v=3","gravatar_id":"","url":"https://api.github.com/users/1507GitCommitTest","html_url":"https://github.com/1507GitCommitTest","followers_url":"https://api.github.com/users/1507GitCommitTest/followers","following_url":"https://api.github.com/users/1507GitCommitTest/following{/other_user}","gists_url":"https://api.github.com/users/1507GitCommitTest/gists{/gist_id}","starred_url":"https://api.github.com/users/1507GitCommitTest/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/1507GitCommitTest/subscriptions","organizations_url":"https://api.github.com/users/1507GitCommitTest/orgs","repos_url":"https://api.github.com/users/1507GitCommitTest/repos","events_url":"https://api.github.com/users/1507GitCommitTest/events{/privacy}","received_events_url":"https://api.github.com/users/1507GitCommitTest/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/1507GitCommitTest/test_repo","description":"","fork":false,"url":"https://api.github.com/repos/1507GitCommitTest/test_repo","forks_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/forks","keys_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/keys{/key_id}","collaborators_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/teams","hooks_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/hooks","issue_events_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/issues/events{/number}","events_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/events","assignees_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/assignees{/user}","branches_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/branches{/branch}","tags_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/tags","blobs_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/git/refs{/sha}","trees_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/git/trees{/sha}","statuses_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/statuses/{sha}","languages_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/languages","stargazers_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/stargazers","contributors_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/contributors","subscribers_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/subscribers","subscription_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/subscription","commits_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/commits{/sha}","git_commits_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/git/commits{/sha}","comments_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/comments{/number}","issue_comment_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/issues/comments{/number}","contents_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/contents/{+path}","compare_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/compare/{base}...{head}","merges_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/merges","archive_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/downloads","issues_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/issues{/number}","pulls_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/pulls{/number}","milestones_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/milestones{/number}","notifications_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/labels{/name}","releases_url":"https://api.github.com/repos/1507GitCommitTest/test_repo/releases{/id}","created_at":"2015-10-28T20:06:54Z","updated_at":"2015-10-29T01:44:16Z","pushed_at":"2015-10-29T01:44:03Z","git_url":"git://github.com/1507GitCommitTest/test_repo.git","ssh_url":"git@github.com:1507GitCommitTest/test_repo.git","clone_url":"https://github.com/1507GitCommitTest/test_repo.git","svn_url":"https://github.com/1507GitCommitTest/test_repo","homepage":null,"size":0,"stargazers_count":1,"watchers_count":1,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":1,"default_branch":"master","permissions":{"admin":true,"push":true,"pull":true}}]'
+    http_version: 
+  recorded_at: Thu, 29 Oct 2015 01:49:27 GMT
+recorded_with: VCR 2.9.3
