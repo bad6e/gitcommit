@@ -32,16 +32,16 @@ OmniAuth.config.add_mock(:github, omniauth_hash)
 
 def stat_one
   @stat_one = Stat.create(name: "Bret Doucette",
-                commits: 100,
-                streaks: 22,
-                current_streaks: 7)
+                          commits: 100,
+                          streaks: 22,
+                          current_streaks: 7)
 end
 
 def stat_two
   @stat_two = Stat.create(name: "Bret Doucette1",
-                commits: 102,
-                streaks: 21,
-                current_streaks: 8)
+                          commits: 102,
+                          streaks: 21,
+                          current_streaks: 8)
 end
 
 def test_setup
