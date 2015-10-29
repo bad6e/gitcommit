@@ -24,6 +24,12 @@ RSpec.describe "User Dashboars", type: :request do
     expect(service.first).to eq "Another_repo"
   end
 
+  it "returns no repos" do
+    user.repos = "[]"
+    service = UserPresenter.new(user).repos
+    expect(service.first).to eq "You have no repositories!"
+  end
+
   it "returns user's starred repos count" do
     service = UserPresenter.new(user).starred_repos
     expect(service).to eq 2
@@ -34,9 +40,21 @@ RSpec.describe "User Dashboars", type: :request do
     expect(service.first).to eq "Added test"
   end
 
+  it "returns user's commit messages" do
+    user.commit_messages = "[\"User has no commits\"]"
+    service = UserPresenter.new(user).commit_mess
+    expect(service.first).to eq "You have no commit messages"
+  end
+
   it "returns user's organizations" do
     service = UserPresenter.new(user).organizations
     expect(service).to eq ["Turing"]
+  end
+
+  it "returns user's organizations" do
+    user.organizations = "[]"
+    service = UserPresenter.new(user).organizations
+    expect(service).to eq ["You have no organizations!"]
   end
 
   it "returns everyone following a user" do
@@ -45,8 +63,20 @@ RSpec.describe "User Dashboars", type: :request do
   end
 
   it "returns everyone following a user" do
+    user.followers = "[]"
+    service = UserPresenter.new(user).followers
+    expect(service.first).to eq "You have no followers LOSER!"
+  end
+
+  it "returns everyone following a user" do
     service = UserPresenter.new(user).followees
     expect(service.first).to eq "justin"
+  end
+
+  it "returns everyone following a user" do
+    user.followees = "[]"
+    service = UserPresenter.new(user).followees
+    expect(service.first).to eq "You are not following anyone!"
   end
 
   it "returns user's total commits" do
@@ -67,5 +97,11 @@ RSpec.describe "User Dashboars", type: :request do
   it "returns user's follower's commit messages" do
     service = UserPresenter.new(user).followers_activities
     expect(service).to eq ["bad6e=>Added RSpec"]
+  end
+
+  it "returns user's follower's commit messages" do
+    user.follower_messages = "{}"
+    service = UserPresenter.new(user).followers_activities
+    expect(service).to eq ["None of your friends are coding"]
   end
 end
