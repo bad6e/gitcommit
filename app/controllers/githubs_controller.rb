@@ -1,2 +1,0 @@
-class GithubsController < ApplicationController
-end
