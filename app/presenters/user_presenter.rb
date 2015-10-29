@@ -1,4 +1,4 @@
-class UserPresenter
+  class UserPresenter
 
   attr_reader :user
 
