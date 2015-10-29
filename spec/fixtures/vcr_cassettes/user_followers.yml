@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/users/1507GitCommitTest/followers?access_token=891bef4db51f9526e0cbd4d82c1a1fe09a15cd6e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 29 Oct 2015 01:49:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4994'
+      X-Ratelimit-Reset:
+      - '1446085991'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - W/"604326c76caf4796421225a6ddc01867"
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - repo
+      X-Oauth-Client-Id:
+      - 1f940dea396a2b997081
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - 7f48e2f7761567e923121f17538d7a6d
+      X-Github-Request-Id:
+      - 4999852B:7FC1:5E6E7FD:56317B28
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"bad6e","id":10092063,"avatar_url":"https://avatars.githubusercontent.com/u/10092063?v=3","gravatar_id":"","url":"https://api.github.com/users/bad6e","html_url":"https://github.com/bad6e","followers_url":"https://api.github.com/users/bad6e/followers","following_url":"https://api.github.com/users/bad6e/following{/other_user}","gists_url":"https://api.github.com/users/bad6e/gists{/gist_id}","starred_url":"https://api.github.com/users/bad6e/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/bad6e/subscriptions","organizations_url":"https://api.github.com/users/bad6e/orgs","repos_url":"https://api.github.com/users/bad6e/repos","events_url":"https://api.github.com/users/bad6e/events{/privacy}","received_events_url":"https://api.github.com/users/bad6e/received_events","type":"User","site_admin":false}]'
+    http_version: 
+  recorded_at: Thu, 29 Oct 2015 01:49:28 GMT
+recorded_with: VCR 2.9.3

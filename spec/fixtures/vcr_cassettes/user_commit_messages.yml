@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/users/1507GitCommitTest/events?access_token=891bef4db51f9526e0cbd4d82c1a1fe09a15cd6e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 29 Oct 2015 01:51:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4990'
+      X-Ratelimit-Reset:
+      - '1446085991'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Last-Modified:
+      - Wed, 28 Oct 2015 18:49:01 GMT
+      Etag:
+      - W/"50c09f831c039bf6613f43292c1c8791"
+      X-Poll-Interval:
+      - '60'
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - 1f940dea396a2b997081
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - a6882e5cd2513376cb9481dbcd83f3a2
+      X-Github-Request-Id:
+      - 4999852B:1AD3:479EE24:56317B9D
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"3286346661","type":"WatchEvent","actor":{"id":15368238,"login":"1507GitCommitTest","gravatar_id":"","url":"https://api.github.com/users/1507GitCommitTest","avatar_url":"https://avatars.githubusercontent.com/u/15368238?"},"repo":{"id":45153323,"name":"1507GitCommitTest/test_2","url":"https://api.github.com/repos/1507GitCommitTest/test_2"},"payload":{"action":"started"},"public":true,"created_at":"2015-10-29T01:49:01Z"},{"id":"3286346439","type":"CreateEvent","actor":{"id":15368238,"login":"1507GitCommitTest","gravatar_id":"","url":"https://api.github.com/users/1507GitCommitTest","avatar_url":"https://avatars.githubusercontent.com/u/15368238?"},"repo":{"id":45153323,"name":"1507GitCommitTest/test_2","url":"https://api.github.com/repos/1507GitCommitTest/test_2"},"payload":{"ref":null,"ref_type":"repository","master_branch":"master","description":"","pusher_type":"user"},"public":true,"created_at":"2015-10-29T01:48:54Z"},{"id":"3286336807","type":"WatchEvent","actor":{"id":15368238,"login":"1507GitCommitTest","gravatar_id":"","url":"https://api.github.com/users/1507GitCommitTest","avatar_url":"https://avatars.githubusercontent.com/u/15368238?"},"repo":{"id":45138791,"name":"1507GitCommitTest/test_repo","url":"https://api.github.com/repos/1507GitCommitTest/test_repo"},"payload":{"action":"started"},"public":true,"created_at":"2015-10-29T01:44:17Z"},{"id":"3286336300","type":"PushEvent","actor":{"id":15368238,"login":"1507GitCommitTest","gravatar_id":"","url":"https://api.github.com/users/1507GitCommitTest","avatar_url":"https://avatars.githubusercontent.com/u/15368238?"},"repo":{"id":45138791,"name":"1507GitCommitTest/test_repo","url":"https://api.github.com/repos/1507GitCommitTest/test_repo"},"payload":{"push_id":844822663,"size":1,"distinct_size":1,"ref":"refs/heads/master","head":"8aa1e239669e34b1e87182f5e249b6e680313946","before":"d10fb7f6c8592da3d5707b96e76bd845bb4edb36","commits":[{"sha":"8aa1e239669e34b1e87182f5e249b6e680313946","author":{"email":"bad6e@virgina.edu","name":"1507GitCommitTest"},"message":"Added
+        Hello World","distinct":true,"url":"https://api.github.com/repos/1507GitCommitTest/test_repo/commits/8aa1e239669e34b1e87182f5e249b6e680313946"}]},"public":true,"created_at":"2015-10-29T01:44:03Z"},{"id":"3286334178","type":"MemberEvent","actor":{"id":15368238,"login":"1507GitCommitTest","gravatar_id":"","url":"https://api.github.com/users/1507GitCommitTest","avatar_url":"https://avatars.githubusercontent.com/u/15368238?"},"repo":{"id":45138791,"name":"1507GitCommitTest/test_repo","url":"https://api.github.com/repos/1507GitCommitTest/test_repo"},"payload":{"member":{"login":"bad6e","id":10092063,"avatar_url":"https://avatars.githubusercontent.com/u/10092063?v=3","gravatar_id":"","url":"https://api.github.com/users/bad6e","html_url":"https://github.com/bad6e","followers_url":"https://api.github.com/users/bad6e/followers","following_url":"https://api.github.com/users/bad6e/following{/other_user}","gists_url":"https://api.github.com/users/bad6e/gists{/gist_id}","starred_url":"https://api.github.com/users/bad6e/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/bad6e/subscriptions","organizations_url":"https://api.github.com/users/bad6e/orgs","repos_url":"https://api.github.com/users/bad6e/repos","events_url":"https://api.github.com/users/bad6e/events{/privacy}","received_events_url":"https://api.github.com/users/bad6e/received_events","type":"User","site_admin":false},"action":"added"},"public":true,"created_at":"2015-10-29T01:43:08Z"},{"id":"3285325635","type":"CreateEvent","actor":{"id":15368238,"login":"1507GitCommitTest","gravatar_id":"","url":"https://api.github.com/users/1507GitCommitTest","avatar_url":"https://avatars.githubusercontent.com/u/15368238?"},"repo":{"id":45138791,"name":"1507GitCommitTest/test_repo","url":"https://api.github.com/repos/1507GitCommitTest/test_repo"},"payload":{"ref":null,"ref_type":"repository","master_branch":"master","description":"","pusher_type":"user"},"public":true,"created_at":"2015-10-28T20:06:54Z"}]'
+    http_version: 
+  recorded_at: Thu, 29 Oct 2015 01:51:24 GMT
+recorded_with: VCR 2.9.3
