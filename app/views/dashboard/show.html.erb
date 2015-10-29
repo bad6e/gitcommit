@@ -1,3 +1,4 @@
+
 <div class="container-fluid container-home">
   <div class="col-md-12">
     <h1 class="home">You Are Authorized</h1>
@@ -7,48 +8,79 @@
     <h4 class="home"><%= pluralize(@user_info.starred_repos, 'Repository')%> Starred</h4>
     <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-lg btn-default btn-home" %>
     <h2 class="home" id="contrib-sum"> Contribution Summary</h2>
-    <br>
-    <div class="col-md-4 home">
-      <h4>Total Commits</h4>
-      <p><%= @user_info.year_commits %></pr>
+
+    <button class="btn btn-lg btn-default btn-home" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Click Here for Stats
+    </button>
+
+    <div class="collapse" id="collapseExample">
+      <div class="col-md-4 home">
+        <h4>Total Commits</h4>
+        <p><%= @user_info.year_commits %></pr>
+      </div>
+      <div class="col-md-4 home">
+        <h4>Current Streak</h4>
+        <p><%= @user_info.current_streaks %></pr>
+      </div>
+      <div class="col-md-4 home">
+        <h4>Longest Streak</h4>
+        <p><%= @user_info.longest_streaks %></pr>
+      </div>
     </div>
-    <div class="col-md-4 home">
-      <h4>Current Streak</h4>
-      <p><%= @user_info.current_streaks %></pr>
-    </div>
-    <div class="col-md-4 home">
-      <h4>Longest Streak</h4>
-      <p><%= @user_info.longest_streaks %></pr>
-    </div>
-  </div>
 
   <div class"container">
     <div class="row">
+      <br>
 
       <div class="col-md-4">
         <h3 class="home">Your Repositories</h3>
         <br>
-        <ol>
-        <% @user_info.repos.each do |repo| %>
-          <p class="home"><%= repo %></p>
-        <% end %>
+        <table class="table home">
+          <thead>
+            <tr>
+              <th>Repo Name</th>
+            </tr>
+          </thead>
+          <% @user_info.repos.each do |repo| %>
+            <tr>
+              <td><%= repo %></td>
+            </tr>
+          <% end %>
+        </table>
       </div>
 
       <div class="col-md-4">
         <h3 class="home">Your Followers</h3>
         <br>
-        <% @user_info.followers.each do |follower| %>
-          <p class="home"><%= follower %></p>
-        <% end %>
-
+        <table class="table home">
+          <thead>
+            <tr>
+              <th>Who is Following You</th>
+            </tr>
+          </thead>
+          <% @user_info.followers.each do |follower| %>
+            <tr>
+              <td><%= follower %></td>
+            </tr>
+          <% end %>
+        </table>
       </div>
 
       <div class="col-md-4">
         <h3 class="home">Who You are Following?</h3>
         <br>
-        <% @user_info.followees.each do |followee| %>
-          <p class="home"><%= followee %></p>
-        <% end %>
+        <table class="table home">
+          <thead>
+            <tr>
+              <th>Who You are Following</th>
+            </tr>
+          </thead>
+          <% @user_info.followees.each do |followee| %>
+            <tr>
+              <td ><%= followee %></td>
+            </tr>
+          <% end %>
+        </table>
       </div>
 
     </div>
@@ -78,7 +110,6 @@
           <p class="home"><%= activity %></p>
         <% end %>
       </div>
-
     </div>
   </div>
 

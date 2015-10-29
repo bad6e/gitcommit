@@ -4,8 +4,8 @@
       <h3 class="home">Leaderboard</h3>
         <table class="table home">
           <tr>
-            <td>Name</td>
-            <td>Commits Since <%= Time.now.month %>/<%= Time.now.day %>/<%= Time.now.year - 1 %></td>
+            <th>Name</th>
+            <th>Commits Since <%= Time.now.month %>/<%= Time.now.day %>/<%= Time.now.year - 1 %></th>
           </tr>
           <% @stats.ordered_commits.each do |stat| %>
           <tr>
@@ -20,8 +20,8 @@
     <h3 class="home">Current Streak</h3>
       <table class="table home">
         <tr>
-          <td>Name</td>
-          <td>Current Streak</td>
+          <th>Name</th>
+          <th>Current Streak</th>
         </tr>
         <% @stats.current_streak.each do |streak| %>
         <tr>
@@ -36,8 +36,8 @@
     <h3 class="home">Longest Streak</h3>
       <table class="table home">
         <tr>
-          <td>Name</td>
-          <td>Longest Streak</td>
+          <th>Name</th>
+          <th>Longest Streak</th>
         </tr>
         <% @stats.longest_streak.each do |streak| %>
         <tr>
