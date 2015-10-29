@@ -37,13 +37,12 @@ RSpec.feature "Vistor Can Login" do
     expect(page).to have_content("Longest Streak")
   end
 
-  xscenario "vistor can see module github stats", js: true do
+  scenario "vistor can see module github stats", js: true do
     visit root_path
     click_button "See Statistics"
     expect(page).to have_content("Leaderboard")
     expect(page).to have_content("Current Streak")
     expect(page).to have_content("Longest Streak")
-    expect(page).to have_content("Bret Doucette")
   end
 end
 
