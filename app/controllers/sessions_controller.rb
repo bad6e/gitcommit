@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_from_oauth(oauth)
 
     if @user
-      log_in(user)
+      log_in(@user)
       redirect_to dashboard_path
     else
       redirect_to root_path
