@@ -1,7 +1,9 @@
 require "rails_helper"
 
-feature "visitor can log in" do
+RSpec.feature "Vistor Can Login" do
+
   before do
+    test_setup
     GithubPresenter.stub_chain(:new,:repos,:starred_repos).and_return("anything")
     GithubPresenter.stub_chain(:new,:starred_repos).and_return("anything")
     GithubPresenter.stub_chain(:new,:organizations).and_return("anything")
@@ -21,8 +23,13 @@ feature "visitor can log in" do
     expect(page).to have_content("bret@iscool.com")
   end
 
-  scenario "vistor can see module github stats" do
+  scenario "vistor can see module github stats", js: true do
     visit root_path
     click_button "See Statistics"
+    expect(page).to have_content("Leaderboard")
+    expect(page).to have_content("Current Streak")
+    expect(page).to have_content("Longest Streak")
+    expect(page).to have_content("Bret Doucette")
   end
 end
+
