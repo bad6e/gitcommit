@@ -11,7 +11,7 @@ RSpec.configure do |config|
 
   def user
     @user ||= User.new(provider: 'github',
-                       uid: '15368238',
+                       uid: ENV['user'],
                        email: nil,
                        nickname: '1507GitCommitTest',
                        image_url: "https://avatars.githubusercontent.com/u/15368238?v...",

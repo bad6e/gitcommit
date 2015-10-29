@@ -39,7 +39,7 @@ RSpec.describe "Github API", type: :request do
 
   it "returns user's total commits" do
     service = GithubService.new(user).find_user_total_commits(user)
-    expect(service).to eq 1
+    expect(service).to eq 2
   end
 
   it "returns user's current streak" do
