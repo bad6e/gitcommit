@@ -1,0 +1,30 @@
+<div class="container-fluid container-home">
+  <div class="col-md-12">
+    <h1 class="home"><%= @stat_user.name %>'s Recent Commit Messages</h1>
+    <%= link_to "Return Home", root_path, class: "btn btn-lg btn-default btn-home" %>
+  </div>
+
+
+  <div class="col-md-4 col-md-offset-4" align="center" id="completed-orders">
+    <br><br>
+    <h4 class="home">Recent Messages</h4>
+      <table class="table home">
+        <tr>
+          <th>Message</th>
+        </tr>
+        <%@stats.commit_messages(@stat_user).each do |message|%>
+          <tr>
+            <td><%= message %></td>
+          </tr>
+        <% end %>
+      </table>
+  </div>
+
+  <div class="container">
+    <div class="col-md-12">
+     <%= link_to "Login with Github", login_path, class: "btn btn-lg btn-default btn-home" %>
+   </div>
+  </div>
+
+
+
