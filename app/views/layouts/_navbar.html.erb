@@ -17,7 +17,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Individual Commit Messages <span class="caret"></span></a>
           <ul class="dropdown-menu">
            <% @stats.list_names.each do |stat| %>
-            <li><%= link_to stat.name %></li>
+            <li><%= link_to stat.name, stat_path(stat) %></li>
           <% end %>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>

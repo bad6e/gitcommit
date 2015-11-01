@@ -4,6 +4,11 @@ class StatsController < ApplicationController
     @stats = StatsPresenter.new
   end
 
+  def show
+    @stats     = StatsPresenter.new
+    @stat_user = Stat.find(params[:id])
+  end
+
   private
 
   def commit_params

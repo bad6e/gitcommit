@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get  '/dashboard', to: 'dashboard#show'
 
   root "stats#index"
+  resources :stats, only: [:show]
 end

@@ -14,4 +14,14 @@
   def list_names
     Stat.name_list
   end
+
+  def commit_messages(user)
+    if user.commit_messages == "[\"User has no commits\"]"
+      ["You have no commit messages"]
+    else
+      user.commit_messages.gsub("\"","").split(", ").map do |r|
+        r.gsub("[","").gsub("]","")
+      end
+    end
+  end
 end
