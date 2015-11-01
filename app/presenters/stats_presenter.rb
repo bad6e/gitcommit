@@ -1,4 +1,4 @@
-class StatsPresenter
+ class StatsPresenter
   def ordered_commits
     Stat.commit_order
   end
@@ -9,5 +9,9 @@ class StatsPresenter
 
   def longest_streak
     Stat.streak
+  end
+
+  def list_names
+    Stat.name_list
   end
 end

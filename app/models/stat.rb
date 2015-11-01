@@ -20,4 +20,8 @@ class Stat < ActiveRecord::Base
   def self.updated_at
     first.when_created
   end
+
+  def self.name_list
+    order(name: :desc)
+  end
 end
