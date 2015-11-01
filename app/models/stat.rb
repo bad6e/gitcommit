@@ -22,6 +22,6 @@ class Stat < ActiveRecord::Base
   end
 
   def self.name_list
-    order(name: :desc)
+    order(name: :asc)
   end
 end
