@@ -7,6 +7,6 @@ class StatsController < ApplicationController
   private
 
   def commit_params
-    params.require(:stat).permit(:name, :commits, :streaks, :current_streaks)
+    params.require(:stat).permit(:name, :commits, :streaks, :current_streaks, :commit_messages)
   end
 end

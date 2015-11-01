@@ -37,7 +37,7 @@ RSpec.describe "Github API", type: :request do
 
   it "returns user's current streak" do
     service = GithubPresenter.new(user).current_streaks
-    expect(service).to eq 1
+    expect(service).to eq 0
   end
 
   it "returns user's longest streak" do
