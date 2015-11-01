@@ -23,6 +23,8 @@ module GlobalConstants
 
   USERS = %w(
               bad6e
+              roseak
+              mcschatz
               travishaby
               Jpease1020
               jphoenix86
