@@ -1,15 +1,29 @@
-## Git Commit Tracker for Turing School Cohort 1507
+## API-Curious
+### Git Commit 1507
 
-To use this application first clone/fork it. Once it is on your machine run the following tasks
+Git Commit is a personalized Git Commit Tracker that displays the following information about your Github account:
 
-1. Bundle
-2. Rake db:create
-3. Rake db:migrate
-4. Rake update_commits
+* Profile Avatar
+* Login Information
+* Number of Starred Repositories
+* Contribution Summary
+* Repository Names
+* Who is following you
+* Who you are following
+* Your organizations
+* Your recent commit messages
+* The people you are following recent commit messages
 
-Rake update_commits is where all the scraping takes place and saves the information to the database. It is a custom rake file located in lib/tasks.
+In addition, it tracks my each class member's total commits, current streak, and longest streak. For fun you can also display each class member's latest ten commit messages.
 
-The website can be found here: [GitCommit1507](http://gitcommit1507.herokuapp.com/). It is setup up using Heroku Scheduler which scrapes the information every hour.
+To obtain the commit statistics, I used Nokogiri to scrape the information. It currently is on a Heroku Scheduler that runs the rake task 'update_commits' every three hours. For the personalized Git information, I consumed the [Github API](https://developer.github.com/v3/)
 
-If you wish to add a Github profile to scrape update the global_constants.rb file!
+The website can be found here:
+
+[Gitcommit1507.herokuapp.com](https://gitcommit1507.herokuapp.com/)
+
+The original project guideline can be found here:
+
+[Turing School Original Assignment - API Curious](https://github.com/turingschool/curriculum/blob/master/source/projects/apicurious.markdown)
+
 
